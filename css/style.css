@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+header > nav > ul {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    
+}
+
+nav > ul > li {
+    font-size: 20px;
+}
+
+nav > ul > li > a {
+    color: #000;
+}
+
+.cool-link {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FCBAD3;
+    transition: width .3s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+}
+
+header > nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.logo-img {
+    max-width: 70px;
+}
+
+.banner {
+    margin: 10vh auto auto auto;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.banner-title {
+    font-size: 55px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: bold;
+}
+
+.banner-title span {
+    background-color: #FCBAD3;
+    color: #000;
+    padding: 0 10px 0px 10px;
+    font-family: 'Pacifico', cursive;
+}
+
+.banner-subtitle {
+    font-size: 30px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin-top: 1rem;
+}
+.banner-desc {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 20px;
+    color: #666;
+}
+
+.mouse-scroll {
+    margin-top: 3rem;
+}
+
+.about-me-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.about-me-section {
+    margin-top: 32vh;
+}
+
+.about-me-text {
+    color: #666;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    max-width: 450px;
+    font-size: 20px;
+    margin: 6rem 0 3rem 0;
+}
+
+.resume {
+    background-color: #EB991E;
+    color: #000;
+    padding: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    border-radius: 7px;
+    transition: .3s;
+}
+
+.resume:hover {
+    background-color: #FCBAD3;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    padding: 1rem;
+    
+}
