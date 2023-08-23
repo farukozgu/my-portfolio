@@ -58,7 +58,7 @@
         <section id="about-me-section" class="about-me-section">
             <div class="container">
                 <div class="row">
-                    <h1 class="about-me-title">About Me</h1>
+                    <!-- <h1 class="about-me-title">About Me</h1> -->
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <div id="skills" class="about-box">
                             <img src="/my-portfolio/assets/img/code.png" alt="code">
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-6">
-                        <div id="skills" class="about-box">
+                        <div id="about-box" class="about-box">
                         <img src="/my-portfolio/assets/img/coder.png" alt="coder">
                         <h3 class="skills-title">About Me</h3>
                         <p class="about-me-text">
@@ -110,7 +110,8 @@
 
     <script>
         ScrollReveal().reveal('.mouse-scroll', {delay:500, origin: 'bottom', distance: '150px', reset: 'true'});
-        ScrollReveal().reveal('.about-me-section', {delay:500, origin: 'bottom', distance: '150px'});
+        ScrollReveal().reveal('#about-box', {delay:500, origin: 'right', distance: '150px'});
+        ScrollReveal().reveal('#skills', {delay:500, origin: 'left', distance: '150px'});
     </script>
 
     
