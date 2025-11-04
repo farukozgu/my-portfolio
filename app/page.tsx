@@ -1,65 +1,145 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+import { projectsData } from '@/lib/data';
+import { ProjectCard } from '@/components/ProjectCard';
+import { experiencesData } from '@/lib/data';
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiOutlineEnvelope } from "react-icons/hi2";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main>
+      
+      <motion.section id="home" className="min-h-[30vh] flex items-center justify-center bg-white px-4" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+        <div className="mx-auto w-full max-w-[1080px] mt-[100px] px-4">        
+          
+          <p className="text-xl md:text-[32px] text-black mb-8 text-center md:text-left mx-auto">
+            <Image
+            src="/avatar.png"
+            alt="Avatar"
+            width={80} 
+            height={80}
+            className="rounded-full mb-3 mx-auto md:mx-0"
+          />
+            Hello, I'm Faruk. I am a Frontend Developer who builds user-centric experiences with React, Next.js and modern web technologies.
+          </p>
+          
+          <div className="flex justify-center gap-2 flex-wrap md:justify-start sm:gap-0 sm:flex-nowrap space-x-4">
+            <a 
+              href="https://www.linkedin.com/in/farukozgu/"
+              target="_blank"
+              className="bg-gray-50 text-[#303030] flex items-center gap-2 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+            <FaLinkedin size={16} />
+              Linkedin
+              
+            </a>
+            <a 
+              href="https://github.com/farukozgu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-50 text-[#303030] flex items-center gap-2 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
             >
-              Learning
-            </a>{" "}
-            center.
+             <FaGithub size={16} />
+              Github
+            </a>
+            <a 
+              href="mailto:faruk.ozgufb@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-50 text-[#303030] flex items-center gap-2 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
+            >
+             <HiOutlineEnvelope size={16} />
+              Email
+            </a>
+            
+          </div>
+          
+        </div>
+      </motion.section>
+
+      <motion.section 
+        id="projects" 
+        className="py-24 sm:py-32" 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: true }}>
+
+        <div className="mx-auto w-full max-w-[1080px] px-4">
+          <h2 className="text-xl md:text-2xl font-semibold mb-10">
+            Portfolio
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-8">
+            {projectsData.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      <motion.section
+        id="about"
+        className="py-24 sm:py-26 bg-white"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: true }}
+        >
+      <div className="mx-auto w-full max-w-[1080px] px-4">
+        <h2 className="text-xl md:text-2xl font-semibold mb-10">
+          About me
+        </h2>
+        <div className="mx-auto w-full max-w-[1080px] text-lg text-black space-y-5 text-left md:text-left mb-20">
+          <p>
+            As a Frontend Developer with three years of professional experience, I specialize in building user-centric interfaces that are intuitive, engaging, and aligned with modern web standards.
+          </p>
+          <p>
+            My expertise lies in creating performant, scalable, and aesthetic applications using a core stack of React, Next.js, JavaScript (ES6+), and Tailwind CSS. I have a proven ability to not only build new features from scratch but also to analyze and refactor existing codebases to improve quality, boost performance, and elevate the overall user experience (UX).
+          </p>
+          <p>
+            I am an innovative problem-solver, a strong team player, and a developer deeply committed to continuous learning. I thrive in collaborative environments and am always motivated to tackle new challenges and stay current with industry trends.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+      <h2 className="text-xl md:text-2xl font-semibold mb-16">
+          Experience
+      </h2>
+    
+    <div className="mx-auto w-full max-w-[1080px]">
+      {experiencesData.map((exp, index) => (
+        
+        <div 
+          key={index} 
+          className="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-2 py-6 border-b border-gray-100 last:border-b-0"
+        >
+          <div className="md:col-span-1 text-black">
+            {exp.date}
+          </div>
+
+          <div className="md:col-span-3">
+            <h3 className="text-xl font-bold text-black mb-1">{exp.title}</h3>
+            
+            <p className="text-black font-medium mb-3">
+              {exp.company}
+            </p>
+            
+            <p className="text-black">
+              {exp.description}
+            </p>
+          </div>
         </div>
-      </main>
+        
+      ))}
     </div>
+    
+  </div>
+</motion.section>
+      
+      
+
+    </main>
   );
 }
